@@ -1,0 +1,12 @@
+{
+  "name": "oembed-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/elembz/oembed-service.git",
+  "author": "Laurens Martin <laurensmbesselsen@gmail.com>",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {
+    "oembed-parser": "^3.0.4"
+  }
+}
