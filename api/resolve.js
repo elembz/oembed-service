@@ -1,7 +1,15 @@
 import { extract } from 'oembed-parser'
 
 export default async function handler(req, res) {
-  const { url } = req.query
+  const { url, secret } = req.query
+
+  // The 'SECRETS' environment variable contains tokens we may authenticate with
+  const secrets = process.env.SECRETS.split(',')
+
+  if (!secrets.includes(secret)) {
+    res.statusCode = 401
+    res.end("No secret provided")
+  }
 
   if (url == null) {
     res.statusCode = 400
